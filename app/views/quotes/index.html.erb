@@ -1,3 +1,11 @@
 <h1>Index</h1>
 
 <%= link_to "New Quote", new_quote_path %>
+
+<h4>QUOTES:</h4>
+
+<% @quotes.each do |quote| %>
+  <p><%= quote.body %></p>
+  <p><%= quote.author %></p>
+  <p><%= link_to "See quote", quote_path(quote) %></p>
+<% end %>

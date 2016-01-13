@@ -19,6 +19,10 @@ class QuotesController < ApplicationController
     end
   end
   
+  def show
+    @quote = Quote.find(params([:id]))
+  end
+  
   def quote_params
     params.require(:quote).permit(:body, :author)
   end

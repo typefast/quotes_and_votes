@@ -20,7 +20,7 @@ class QuotesController < ApplicationController
   end
   
   def show
-    @quote = Quote.find(params([:id]))
+    @quote = Quote.find(params[:id])
   end
   
   def quote_params

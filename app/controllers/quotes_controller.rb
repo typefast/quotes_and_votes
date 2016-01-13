@@ -23,6 +23,17 @@ class QuotesController < ApplicationController
     end
   end
   
+  def update
+    @quote = Quote.find(params[:id])
+    if @quote.update(quote_params)
+      flash[:success] = "Quote Updated!"
+      redirect_to @quote
+    else
+      flash[:error] = "There was an error!"
+      render :edit
+    end
+  end
+  
   def show
     @quote = Quote.find(params[:id])
   end
